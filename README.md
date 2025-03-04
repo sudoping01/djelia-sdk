@@ -16,7 +16,7 @@ The REST API documentation can be found on [docs.djelia-sdk.com](https://docs.dj
 
 ```sh
 # install from PyPI
-pip install --pre djelia_sdk
+pip install djelia_sdk
 ```
 
 ## Usage
