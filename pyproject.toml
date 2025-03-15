@@ -1,6 +1,6 @@
 [project]
 name = "djelia_sdk"
-version = "1.0.0"
+version = "2.0.0"
 description = "The official Python library for the djelia-sdk API"
 dynamic = ["readme"]
 license = "Apache-2.0"
@@ -36,7 +36,6 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/sudoping01/djelia-sdk"
 Repository = "https://github.com/sudoping01/djelia-sdk"
-
 
 
 [tool.rye]
@@ -151,7 +150,6 @@ reportImplicitOverride = true
 
 reportImportCycles = false
 reportPrivateUsage = false
-
 
 [tool.ruff]
 line-length = 120
