@@ -4,15 +4,9 @@
 
 ### Models
 
-Types:
-
-```python
-from djelia_sdk.types.api.v1 import ModelCreateSpeechResponse
-```
-
 Methods:
 
-- <code title="post /api/v1/models/tts">client.api.v1.models.<a href="./src/djelia_sdk/resources/api/v1/models/models.py">create_speech</a>(\*\*<a href="src/djelia_sdk/types/api/v1/model_create_speech_params.py">params</a>) -> <a href="./src/djelia_sdk/types/api/v1/model_create_speech_response.py">object</a></code>
+- <code title="post /api/v1/models/tts">client.api.v1.models.<a href="./src/djelia_sdk/resources/api/v1/models/models.py">create_speech</a>(\*\*<a href="src/djelia_sdk/types/api/v1/model_create_speech_params.py">params</a>) -> object</code>
 
 #### Translate
 
