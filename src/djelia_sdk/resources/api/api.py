@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from ... import _resource
 from .v1.v1 import (
     V1Resource,
     AsyncV1Resource,
@@ -11,12 +12,11 @@ from .v1.v1 import (
     AsyncV1ResourceWithStreamingResponse,
 )
 from ..._compat import cached_property
-from ..._resource import SyncAPIResource, AsyncAPIResource
 
 __all__ = ["APIResource", "AsyncAPIResource"]
 
 
-class APIResource(SyncAPIResource):
+class APIResource(_resource.SyncAPIResource):
     @cached_property
     def v1(self) -> V1Resource:
         return V1Resource(self._client)
@@ -41,7 +41,7 @@ class APIResource(SyncAPIResource):
         return APIResourceWithStreamingResponse(self)
 
 
-class AsyncAPIResource(AsyncAPIResource):
+class AsyncAPIResource(_resource.AsyncAPIResource):
     @cached_property
     def v1(self) -> AsyncV1Resource:
         return AsyncV1Resource(self._client)
