@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.0.2 (2025-11-11)
+
+Full Changelog: [v2.0.1...v2.0.2](https://github.com/sudoping01/djelia-sdk/compare/v2.0.1...v2.0.2)
+
+### Bug Fixes
+
+* compat with Python 3.14 ([76d8281](https://github.com/sudoping01/djelia-sdk/commit/76d82814f7f766674dd6712de2fdfd0389ba533b))
+
+
+### Chores
+
+* **internal:** grammar fix (it's -&gt; its) ([1251812](https://github.com/sudoping01/djelia-sdk/commit/1251812b7734204145b2bd7b1e25faeddbb8fde8))
+* **package:** drop Python 3.8 support ([b5b6a6d](https://github.com/sudoping01/djelia-sdk/commit/b5b6a6dfedd415633b02f4de3cd6a44fca1aa4fb))
+
 ## 2.0.1 (2025-10-31)
 
 Full Changelog: [v2.0.0...v2.0.1](https://github.com/sudoping01/djelia-sdk/compare/v2.0.0...v2.0.1)
