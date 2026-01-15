@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Mapping
+from typing import TYPE_CHECKING, Any, Mapping
 from typing_extensions import Self, override
 
 import httpx
@@ -20,6 +20,7 @@ from ._types import (
     not_given,
 )
 from ._utils import is_given, get_async_library
+from ._compat import cached_property
 from ._version import __version__
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError, DjeliaSDKError
@@ -28,7 +29,10 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
-from .resources.api import api
+
+if TYPE_CHECKING:
+    from .resources import api
+    from .resources.api.api import APIResource, AsyncAPIResource
 
 __all__ = [
     "Timeout",
@@ -43,10 +47,6 @@ __all__ = [
 
 
 class DjeliaSDK(SyncAPIClient):
-    api: api.APIResource
-    with_raw_response: DjeliaSDKWithRawResponse
-    with_streaming_response: DjeliaSDKWithStreamedResponse
-
     # client options
     api_key: str
 
@@ -101,9 +101,19 @@ class DjeliaSDK(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.api = api.APIResource(self)
-        self.with_raw_response = DjeliaSDKWithRawResponse(self)
-        self.with_streaming_response = DjeliaSDKWithStreamedResponse(self)
+    @cached_property
+    def api(self) -> APIResource:
+        from .resources.api import APIResource
+
+        return APIResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> DjeliaSDKWithRawResponse:
+        return DjeliaSDKWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> DjeliaSDKWithStreamedResponse:
+        return DjeliaSDKWithStreamedResponse(self)
 
     @property
     @override
@@ -211,10 +221,6 @@ class DjeliaSDK(SyncAPIClient):
 
 
 class AsyncDjeliaSDK(AsyncAPIClient):
-    api: api.AsyncAPIResource
-    with_raw_response: AsyncDjeliaSDKWithRawResponse
-    with_streaming_response: AsyncDjeliaSDKWithStreamedResponse
-
     # client options
     api_key: str
 
@@ -269,9 +275,19 @@ class AsyncDjeliaSDK(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.api = api.AsyncAPIResource(self)
-        self.with_raw_response = AsyncDjeliaSDKWithRawResponse(self)
-        self.with_streaming_response = AsyncDjeliaSDKWithStreamedResponse(self)
+    @cached_property
+    def api(self) -> AsyncAPIResource:
+        from .resources.api import AsyncAPIResource
+
+        return AsyncAPIResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> AsyncDjeliaSDKWithRawResponse:
+        return AsyncDjeliaSDKWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncDjeliaSDKWithStreamedResponse:
+        return AsyncDjeliaSDKWithStreamedResponse(self)
 
     @property
     @override
@@ -379,23 +395,55 @@ class AsyncDjeliaSDK(AsyncAPIClient):
 
 
 class DjeliaSDKWithRawResponse:
+    _client: DjeliaSDK
+
     def __init__(self, client: DjeliaSDK) -> None:
-        self.api = api.APIResourceWithRawResponse(client.api)
+        self._client = client
+
+    @cached_property
+    def api(self) -> api.APIResourceWithRawResponse:
+        from .resources.api import APIResourceWithRawResponse
+
+        return APIResourceWithRawResponse(self._client.api)
 
 
 class AsyncDjeliaSDKWithRawResponse:
+    _client: AsyncDjeliaSDK
+
     def __init__(self, client: AsyncDjeliaSDK) -> None:
-        self.api = api.AsyncAPIResourceWithRawResponse(client.api)
+        self._client = client
+
+    @cached_property
+    def api(self) -> api.AsyncAPIResourceWithRawResponse:
+        from .resources.api import AsyncAPIResourceWithRawResponse
+
+        return AsyncAPIResourceWithRawResponse(self._client.api)
 
 
 class DjeliaSDKWithStreamedResponse:
+    _client: DjeliaSDK
+
     def __init__(self, client: DjeliaSDK) -> None:
-        self.api = api.APIResourceWithStreamingResponse(client.api)
+        self._client = client
+
+    @cached_property
+    def api(self) -> api.APIResourceWithStreamingResponse:
+        from .resources.api import APIResourceWithStreamingResponse
+
+        return APIResourceWithStreamingResponse(self._client.api)
 
 
 class AsyncDjeliaSDKWithStreamedResponse:
+    _client: AsyncDjeliaSDK
+
     def __init__(self, client: AsyncDjeliaSDK) -> None:
-        self.api = api.AsyncAPIResourceWithStreamingResponse(client.api)
+        self._client = client
+
+    @cached_property
+    def api(self) -> api.AsyncAPIResourceWithStreamingResponse:
+        from .resources.api import AsyncAPIResourceWithStreamingResponse
+
+        return AsyncAPIResourceWithStreamingResponse(self._client.api)
 
 
 Client = DjeliaSDK

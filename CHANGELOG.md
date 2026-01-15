@@ -1,5 +1,29 @@
 # Changelog
 
+## 2.0.3 (2026-01-14)
+
+Full Changelog: [v2.0.2...v2.0.3](https://github.com/sudoping01/djelia-sdk/compare/v2.0.2...v2.0.3)
+
+### Bug Fixes
+
+* **compat:** update signatures of `model_dump` and `model_dump_json` for Pydantic v1 ([900e486](https://github.com/sudoping01/djelia-sdk/commit/900e486a0c6934193a45bec3a41ed5db179e0ee6))
+* ensure streams are always closed ([0761d50](https://github.com/sudoping01/djelia-sdk/commit/0761d500eff6941db4803ab0c8daae17931785fc))
+* **types:** allow pyright to infer TypedDict types within SequenceNotStr ([720049f](https://github.com/sudoping01/djelia-sdk/commit/720049f542e32cddbe290ef50ec8852788c70607))
+* use async_to_httpx_files in patch method ([c6d3791](https://github.com/sudoping01/djelia-sdk/commit/c6d37919a5c5e91c80a78830992590f09ecdaff0))
+
+
+### Chores
+
+* add Python 3.14 classifier and testing ([61f5055](https://github.com/sudoping01/djelia-sdk/commit/61f5055ef13750b7b8a1e02275046ca7c02ac2cb))
+* **deps:** mypy 1.18.1 has a regression, pin to 1.17 ([95ddb07](https://github.com/sudoping01/djelia-sdk/commit/95ddb077f3608a78df9885ccab6a0b194659bb47))
+* **docs:** use environment variables for authentication in code snippets ([40573d4](https://github.com/sudoping01/djelia-sdk/commit/40573d4fe7e7000bf270d96b61ca93d0643c9260))
+* **internal:** add `--fix` argument to lint script ([5725078](https://github.com/sudoping01/djelia-sdk/commit/57250783c3d71fd90ccab30c2ef352f86d909523))
+* **internal:** add missing files argument to base client ([5346cc8](https://github.com/sudoping01/djelia-sdk/commit/5346cc8b9970fe036f2175d759970171ebbef6f9))
+* **internal:** codegen related update ([1cfa197](https://github.com/sudoping01/djelia-sdk/commit/1cfa197a11184c82e965a0b1ad23dfa5f429c77a))
+* **internal:** codegen related update ([7f9de1a](https://github.com/sudoping01/djelia-sdk/commit/7f9de1af2a8413975e152162e8021409849eb194))
+* speedup initial import ([4dfc9a4](https://github.com/sudoping01/djelia-sdk/commit/4dfc9a40fea37dfd26ea3cf39e300d8f85fd2236))
+* update lockfile ([b71c7a4](https://github.com/sudoping01/djelia-sdk/commit/b71c7a4d03b4cafe2d1150313c34535668c93dd0))
+
 ## 2.0.2 (2025-11-11)
 
 Full Changelog: [v2.0.1...v2.0.2](https://github.com/sudoping01/djelia-sdk/compare/v2.0.1...v2.0.2)

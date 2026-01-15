@@ -77,6 +77,7 @@ pip install djelia_sdk[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
+import os
 import asyncio
 from djelia_sdk import DefaultAioHttpClient
 from djelia_sdk import AsyncDjeliaSDK
@@ -84,7 +85,7 @@ from djelia_sdk import AsyncDjeliaSDK
 
 async def main() -> None:
     async with AsyncDjeliaSDK(
-        api_key="My API Key",
+        api_key=os.environ.get("DJELIA_SDK_API_KEY"),  # This is the default and can be omitted
         http_client=DefaultAioHttpClient(),
     ) as client:
         response = await client.api.v1.models.translate.list_supported_languages()
