@@ -16,7 +16,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestModels:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_speech(self, client: DjeliaSDK) -> None:
         model = client.api.v1.models.create_speech(
@@ -24,7 +24,7 @@ class TestModels:
         )
         assert_matches_type(object, model, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_speech_with_all_params(self, client: DjeliaSDK) -> None:
         model = client.api.v1.models.create_speech(
@@ -33,7 +33,7 @@ class TestModels:
         )
         assert_matches_type(object, model, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_speech(self, client: DjeliaSDK) -> None:
         response = client.api.v1.models.with_raw_response.create_speech(
@@ -45,7 +45,7 @@ class TestModels:
         model = response.parse()
         assert_matches_type(object, model, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_speech(self, client: DjeliaSDK) -> None:
         with client.api.v1.models.with_streaming_response.create_speech(
@@ -65,7 +65,7 @@ class TestAsyncModels:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_speech(self, async_client: AsyncDjeliaSDK) -> None:
         model = await async_client.api.v1.models.create_speech(
@@ -73,7 +73,7 @@ class TestAsyncModels:
         )
         assert_matches_type(object, model, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_speech_with_all_params(self, async_client: AsyncDjeliaSDK) -> None:
         model = await async_client.api.v1.models.create_speech(
@@ -82,7 +82,7 @@ class TestAsyncModels:
         )
         assert_matches_type(object, model, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_speech(self, async_client: AsyncDjeliaSDK) -> None:
         response = await async_client.api.v1.models.with_raw_response.create_speech(
@@ -94,7 +94,7 @@ class TestAsyncModels:
         model = await response.parse()
         assert_matches_type(object, model, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_speech(self, async_client: AsyncDjeliaSDK) -> None:
         async with async_client.api.v1.models.with_streaming_response.create_speech(
