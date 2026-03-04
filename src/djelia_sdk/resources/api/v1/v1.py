@@ -19,6 +19,14 @@ __all__ = ["V1Resource", "AsyncV1Resource"]
 class V1Resource(SyncAPIResource):
     @cached_property
     def models(self) -> ModelsResource:
+        """
+        ### Supported Models
+        Djelia provides access to powerful linguistic models tailored for African languages. Below are the models currently available:
+
+        - **Transcription**: Convert Bambara audio into text with real-time streaming capabilities.
+        - **Translation**: Translate text seamlessly between Bambara, French, and English.
+        - **Text-to-Speech (Experimental)**: Transform Bambara text into natural, human-like speech.
+        """
         return ModelsResource(self._client)
 
     @cached_property
@@ -44,6 +52,14 @@ class V1Resource(SyncAPIResource):
 class AsyncV1Resource(AsyncAPIResource):
     @cached_property
     def models(self) -> AsyncModelsResource:
+        """
+        ### Supported Models
+        Djelia provides access to powerful linguistic models tailored for African languages. Below are the models currently available:
+
+        - **Transcription**: Convert Bambara audio into text with real-time streaming capabilities.
+        - **Translation**: Translate text seamlessly between Bambara, French, and English.
+        - **Text-to-Speech (Experimental)**: Transform Bambara text into natural, human-like speech.
+        """
         return AsyncModelsResource(self._client)
 
     @cached_property
@@ -72,6 +88,14 @@ class V1ResourceWithRawResponse:
 
     @cached_property
     def models(self) -> ModelsResourceWithRawResponse:
+        """
+        ### Supported Models
+        Djelia provides access to powerful linguistic models tailored for African languages. Below are the models currently available:
+
+        - **Transcription**: Convert Bambara audio into text with real-time streaming capabilities.
+        - **Translation**: Translate text seamlessly between Bambara, French, and English.
+        - **Text-to-Speech (Experimental)**: Transform Bambara text into natural, human-like speech.
+        """
         return ModelsResourceWithRawResponse(self._v1.models)
 
 
@@ -81,6 +105,14 @@ class AsyncV1ResourceWithRawResponse:
 
     @cached_property
     def models(self) -> AsyncModelsResourceWithRawResponse:
+        """
+        ### Supported Models
+        Djelia provides access to powerful linguistic models tailored for African languages. Below are the models currently available:
+
+        - **Transcription**: Convert Bambara audio into text with real-time streaming capabilities.
+        - **Translation**: Translate text seamlessly between Bambara, French, and English.
+        - **Text-to-Speech (Experimental)**: Transform Bambara text into natural, human-like speech.
+        """
         return AsyncModelsResourceWithRawResponse(self._v1.models)
 
 
@@ -90,6 +122,14 @@ class V1ResourceWithStreamingResponse:
 
     @cached_property
     def models(self) -> ModelsResourceWithStreamingResponse:
+        """
+        ### Supported Models
+        Djelia provides access to powerful linguistic models tailored for African languages. Below are the models currently available:
+
+        - **Transcription**: Convert Bambara audio into text with real-time streaming capabilities.
+        - **Translation**: Translate text seamlessly between Bambara, French, and English.
+        - **Text-to-Speech (Experimental)**: Transform Bambara text into natural, human-like speech.
+        """
         return ModelsResourceWithStreamingResponse(self._v1.models)
 
 
@@ -99,4 +139,12 @@ class AsyncV1ResourceWithStreamingResponse:
 
     @cached_property
     def models(self) -> AsyncModelsResourceWithStreamingResponse:
+        """
+        ### Supported Models
+        Djelia provides access to powerful linguistic models tailored for African languages. Below are the models currently available:
+
+        - **Transcription**: Convert Bambara audio into text with real-time streaming capabilities.
+        - **Translation**: Translate text seamlessly between Bambara, French, and English.
+        - **Text-to-Speech (Experimental)**: Transform Bambara text into natural, human-like speech.
+        """
         return AsyncModelsResourceWithStreamingResponse(self._v1.models)

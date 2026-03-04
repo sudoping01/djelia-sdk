@@ -24,6 +24,15 @@ __all__ = ["TranslateResource", "AsyncTranslateResource"]
 
 
 class TranslateResource(SyncAPIResource):
+    """
+    ### Supported Models
+    Djelia provides access to powerful linguistic models tailored for African languages. Below are the models currently available:
+
+    - **Transcription**: Convert Bambara audio into text with real-time streaming capabilities.
+    - **Translation**: Translate text seamlessly between Bambara, French, and English.
+    - **Text-to-Speech (Experimental)**: Transform Bambara text into natural, human-like speech.
+    """
+
     @cached_property
     def with_raw_response(self) -> TranslateResourceWithRawResponse:
         """
@@ -181,6 +190,15 @@ class TranslateResource(SyncAPIResource):
 
 
 class AsyncTranslateResource(AsyncAPIResource):
+    """
+    ### Supported Models
+    Djelia provides access to powerful linguistic models tailored for African languages. Below are the models currently available:
+
+    - **Transcription**: Convert Bambara audio into text with real-time streaming capabilities.
+    - **Translation**: Translate text seamlessly between Bambara, French, and English.
+    - **Text-to-Speech (Experimental)**: Transform Bambara text into natural, human-like speech.
+    """
+
     @cached_property
     def with_raw_response(self) -> AsyncTranslateResourceWithRawResponse:
         """
