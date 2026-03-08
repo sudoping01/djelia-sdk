@@ -24,7 +24,7 @@ class TestTranscribe:
     @parametrize
     def test_method_create_transcription(self, client: DjeliaSDK) -> None:
         transcribe = client.api.v1.models.transcribe.create_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         )
         assert_matches_type(TranscribeCreateTranscriptionResponse, transcribe, path=["response"])
 
@@ -32,7 +32,7 @@ class TestTranscribe:
     @parametrize
     def test_method_create_transcription_with_all_params(self, client: DjeliaSDK) -> None:
         transcribe = client.api.v1.models.transcribe.create_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
             translate_to_french=True,
         )
         assert_matches_type(TranscribeCreateTranscriptionResponse, transcribe, path=["response"])
@@ -41,7 +41,7 @@ class TestTranscribe:
     @parametrize
     def test_raw_response_create_transcription(self, client: DjeliaSDK) -> None:
         response = client.api.v1.models.transcribe.with_raw_response.create_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         )
 
         assert response.is_closed is True
@@ -53,7 +53,7 @@ class TestTranscribe:
     @parametrize
     def test_streaming_response_create_transcription(self, client: DjeliaSDK) -> None:
         with client.api.v1.models.transcribe.with_streaming_response.create_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -67,7 +67,7 @@ class TestTranscribe:
     @parametrize
     def test_method_stream_transcription(self, client: DjeliaSDK) -> None:
         transcribe = client.api.v1.models.transcribe.stream_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         )
         assert_matches_type(TranscribeStreamTranscriptionResponse, transcribe, path=["response"])
 
@@ -75,7 +75,7 @@ class TestTranscribe:
     @parametrize
     def test_method_stream_transcription_with_all_params(self, client: DjeliaSDK) -> None:
         transcribe = client.api.v1.models.transcribe.stream_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
             translate_to_french=True,
         )
         assert_matches_type(TranscribeStreamTranscriptionResponse, transcribe, path=["response"])
@@ -84,7 +84,7 @@ class TestTranscribe:
     @parametrize
     def test_raw_response_stream_transcription(self, client: DjeliaSDK) -> None:
         response = client.api.v1.models.transcribe.with_raw_response.stream_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         )
 
         assert response.is_closed is True
@@ -96,7 +96,7 @@ class TestTranscribe:
     @parametrize
     def test_streaming_response_stream_transcription(self, client: DjeliaSDK) -> None:
         with client.api.v1.models.transcribe.with_streaming_response.stream_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -116,7 +116,7 @@ class TestAsyncTranscribe:
     @parametrize
     async def test_method_create_transcription(self, async_client: AsyncDjeliaSDK) -> None:
         transcribe = await async_client.api.v1.models.transcribe.create_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         )
         assert_matches_type(TranscribeCreateTranscriptionResponse, transcribe, path=["response"])
 
@@ -124,7 +124,7 @@ class TestAsyncTranscribe:
     @parametrize
     async def test_method_create_transcription_with_all_params(self, async_client: AsyncDjeliaSDK) -> None:
         transcribe = await async_client.api.v1.models.transcribe.create_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
             translate_to_french=True,
         )
         assert_matches_type(TranscribeCreateTranscriptionResponse, transcribe, path=["response"])
@@ -133,7 +133,7 @@ class TestAsyncTranscribe:
     @parametrize
     async def test_raw_response_create_transcription(self, async_client: AsyncDjeliaSDK) -> None:
         response = await async_client.api.v1.models.transcribe.with_raw_response.create_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         )
 
         assert response.is_closed is True
@@ -145,7 +145,7 @@ class TestAsyncTranscribe:
     @parametrize
     async def test_streaming_response_create_transcription(self, async_client: AsyncDjeliaSDK) -> None:
         async with async_client.api.v1.models.transcribe.with_streaming_response.create_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -159,7 +159,7 @@ class TestAsyncTranscribe:
     @parametrize
     async def test_method_stream_transcription(self, async_client: AsyncDjeliaSDK) -> None:
         transcribe = await async_client.api.v1.models.transcribe.stream_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         )
         assert_matches_type(TranscribeStreamTranscriptionResponse, transcribe, path=["response"])
 
@@ -167,7 +167,7 @@ class TestAsyncTranscribe:
     @parametrize
     async def test_method_stream_transcription_with_all_params(self, async_client: AsyncDjeliaSDK) -> None:
         transcribe = await async_client.api.v1.models.transcribe.stream_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
             translate_to_french=True,
         )
         assert_matches_type(TranscribeStreamTranscriptionResponse, transcribe, path=["response"])
@@ -176,7 +176,7 @@ class TestAsyncTranscribe:
     @parametrize
     async def test_raw_response_stream_transcription(self, async_client: AsyncDjeliaSDK) -> None:
         response = await async_client.api.v1.models.transcribe.with_raw_response.stream_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         )
 
         assert response.is_closed is True
@@ -188,7 +188,7 @@ class TestAsyncTranscribe:
     @parametrize
     async def test_streaming_response_stream_transcription(self, async_client: AsyncDjeliaSDK) -> None:
         async with async_client.api.v1.models.transcribe.with_streaming_response.stream_transcription(
-            file=b"raw file contents",
+            file=b"Example data",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
