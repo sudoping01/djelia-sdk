@@ -1,5 +1,50 @@
 # Changelog
 
+## 2.1.0 (2026-05-13)
+
+Full Changelog: [v2.0.3...v2.1.0](https://github.com/sudoping01/djelia-sdk/compare/v2.0.3...v2.1.0)
+
+### Features
+
+* **client:** add custom JSON encoder for extended type support ([97220f7](https://github.com/sudoping01/djelia-sdk/commit/97220f7b3a7fef3b3b2ad808d2f689ef2408b910))
+
+
+### Bug Fixes
+
+* **deps:** bump minimum typing-extensions version ([a84caeb](https://github.com/sudoping01/djelia-sdk/commit/a84caeb4f0fb073edbaf3c77a5e0cf5ee0360c1a))
+* **pydantic:** do not pass `by_alias` unless set ([ccfce59](https://github.com/sudoping01/djelia-sdk/commit/ccfce59a0752487c34f635560b3e90cce04f1a32))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([ec86b3f](https://github.com/sudoping01/djelia-sdk/commit/ec86b3f6074e1ab152598559d12455727b24b18f))
+* **ci:** upgrade `actions/github-script` ([aaaa61b](https://github.com/sudoping01/djelia-sdk/commit/aaaa61b5970d2a4bb7ab4a8fc2e421be6f1cdf81))
+* format all `api.md` files ([bfc26a7](https://github.com/sudoping01/djelia-sdk/commit/bfc26a746fad8af7f138d8ff3d12478844fef478))
+* **internal:** add request options to SSE classes ([4c802da](https://github.com/sudoping01/djelia-sdk/commit/4c802da6d63198e403ca7198168a3d6561b82bac))
+* **internal:** bump dependencies ([2eddbac](https://github.com/sudoping01/djelia-sdk/commit/2eddbac65ceb003c4205571b40feba15b0b56888))
+* **internal:** codegen related update ([565a980](https://github.com/sudoping01/djelia-sdk/commit/565a98025a926a6c581b4365cc5f5cb43bc1c4ac))
+* **internal:** codegen related update ([a7003f0](https://github.com/sudoping01/djelia-sdk/commit/a7003f0cdea969c5c0774bd8b3169e6e7040c8e6))
+* **internal:** codegen related update ([d72a3c5](https://github.com/sudoping01/djelia-sdk/commit/d72a3c56c4d129b5f2cb3bf38ed876aa185749b0))
+* **internal:** codegen related update ([f14df2a](https://github.com/sudoping01/djelia-sdk/commit/f14df2a8ac330cd1ee93f2aebd8b3a72872000f9))
+* **internal:** codegen related update ([223c4dc](https://github.com/sudoping01/djelia-sdk/commit/223c4dccaf368e3ee279b844694d4093cb4f99ed))
+* **internal:** codegen related update ([2f33d16](https://github.com/sudoping01/djelia-sdk/commit/2f33d1694b9e3ccb8cb73161033487153c32a4c5))
+* **internal:** codegen related update ([0e160c5](https://github.com/sudoping01/djelia-sdk/commit/0e160c565ed1cc45877b34b1a8d61221a9462433))
+* **internal:** codegen related update ([d1e34c1](https://github.com/sudoping01/djelia-sdk/commit/d1e34c1a056ad064acf6eb7f7fa8aa222643e74b))
+* **internal:** codegen related update ([6c01755](https://github.com/sudoping01/djelia-sdk/commit/6c01755d41690050aa8fe51d2f24022f981d439a))
+* **internal:** codegen related update ([38f3846](https://github.com/sudoping01/djelia-sdk/commit/38f38467967f9400e5dd0a9084cc401f5255498f))
+* **internal:** codegen related update ([1acfb9d](https://github.com/sudoping01/djelia-sdk/commit/1acfb9dc1418c870ad25e842a07ed145c265797b))
+* **internal:** codegen related update ([e4a0eda](https://github.com/sudoping01/djelia-sdk/commit/e4a0edae541bdc0d0023bff20bc787941dcfd791))
+* **internal:** codegen related update ([9f9b697](https://github.com/sudoping01/djelia-sdk/commit/9f9b697220e67977e1a5239c6cf94b3d5c4eb5c0))
+* **internal:** codegen related update ([0b9cb53](https://github.com/sudoping01/djelia-sdk/commit/0b9cb53dda82e90d986d040b1238f8ee2043d5b8))
+* **internal:** fix lint error on Python 3.14 ([22edd75](https://github.com/sudoping01/djelia-sdk/commit/22edd759ac97ecd1996e96acc10c4df94365b6ab))
+* **internal:** make `test_proxy_environment_variables` more resilient ([406da45](https://github.com/sudoping01/djelia-sdk/commit/406da4539f675f37a115225b3972e99326989dbf))
+* **internal:** make `test_proxy_environment_variables` more resilient to env ([b95f25f](https://github.com/sudoping01/djelia-sdk/commit/b95f25f707e9de893ac9e7c65d5b14c1599b712e))
+* **internal:** remove mock server code ([ffe9474](https://github.com/sudoping01/djelia-sdk/commit/ffe9474df0cd69ddcd02b799c15124cda88c3a5f))
+* **internal:** tweak CI branches ([1033a3f](https://github.com/sudoping01/djelia-sdk/commit/1033a3f691625c20ddc71fd1f2fbd4e0a8808dee))
+* **internal:** update `actions/checkout` version ([5e13eb3](https://github.com/sudoping01/djelia-sdk/commit/5e13eb37e206310604362d899af7a3b91d3e9e51))
+* update mock server docs ([183399c](https://github.com/sudoping01/djelia-sdk/commit/183399c2e8f037183f8bbcba70eb28a46954c95f))
+* update placeholder string ([17b1b46](https://github.com/sudoping01/djelia-sdk/commit/17b1b46c6c974c3bb7a7b5e77f3ade73151dbc7b))
+
 ## 2.0.3 (2026-01-14)
 
 Full Changelog: [v2.0.2...v2.0.3](https://github.com/sudoping01/djelia-sdk/compare/v2.0.2...v2.0.3)

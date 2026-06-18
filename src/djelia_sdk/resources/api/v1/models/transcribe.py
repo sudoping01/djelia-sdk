@@ -6,8 +6,9 @@ from typing import Any, Mapping, Optional, cast
 
 import httpx
 
+from ....._files import deepcopy_with_paths
 from ....._types import Body, Omit, Query, Headers, NotGiven, FileTypes, omit, not_given
-from ....._utils import extract_files, maybe_transform, deepcopy_minimal, async_maybe_transform
+from ....._utils import extract_files, maybe_transform, async_maybe_transform
 from ....._compat import cached_property
 from ....._resource import SyncAPIResource, AsyncAPIResource
 from ....._response import (
@@ -25,6 +26,15 @@ __all__ = ["TranscribeResource", "AsyncTranscribeResource"]
 
 
 class TranscribeResource(SyncAPIResource):
+    """
+    ### Supported Models
+    Djelia provides access to powerful linguistic models tailored for African languages. Below are the models currently available:
+
+    - **Transcription**: Convert Bambara audio into text with real-time streaming capabilities.
+    - **Translation**: Translate text seamlessly between Bambara, French, and English.
+    - **Text-to-Speech (Experimental)**: Transform Bambara text into natural, human-like speech.
+    """
+
     @cached_property
     def with_raw_response(self) -> TranscribeResourceWithRawResponse:
         """
@@ -132,7 +142,7 @@ class TranscribeResource(SyncAPIResource):
 
           timeout: Override the client-level default timeout for this request, in seconds
         """
-        body = deepcopy_minimal({"file": file})
+        body = deepcopy_with_paths({"file": file}, [["file"]])
         files = extract_files(cast(Mapping[str, object], body), paths=[["file"]])
         # It should be noted that the actual Content-Type header that will be
         # sent to the server will contain a `boundary` parameter, e.g.
@@ -235,7 +245,7 @@ class TranscribeResource(SyncAPIResource):
 
           timeout: Override the client-level default timeout for this request, in seconds
         """
-        body = deepcopy_minimal({"file": file})
+        body = deepcopy_with_paths({"file": file}, [["file"]])
         files = extract_files(cast(Mapping[str, object], body), paths=[["file"]])
         # It should be noted that the actual Content-Type header that will be
         # sent to the server will contain a `boundary` parameter, e.g.
@@ -265,6 +275,15 @@ class TranscribeResource(SyncAPIResource):
 
 
 class AsyncTranscribeResource(AsyncAPIResource):
+    """
+    ### Supported Models
+    Djelia provides access to powerful linguistic models tailored for African languages. Below are the models currently available:
+
+    - **Transcription**: Convert Bambara audio into text with real-time streaming capabilities.
+    - **Translation**: Translate text seamlessly between Bambara, French, and English.
+    - **Text-to-Speech (Experimental)**: Transform Bambara text into natural, human-like speech.
+    """
+
     @cached_property
     def with_raw_response(self) -> AsyncTranscribeResourceWithRawResponse:
         """
@@ -372,7 +391,7 @@ class AsyncTranscribeResource(AsyncAPIResource):
 
           timeout: Override the client-level default timeout for this request, in seconds
         """
-        body = deepcopy_minimal({"file": file})
+        body = deepcopy_with_paths({"file": file}, [["file"]])
         files = extract_files(cast(Mapping[str, object], body), paths=[["file"]])
         # It should be noted that the actual Content-Type header that will be
         # sent to the server will contain a `boundary` parameter, e.g.
@@ -477,7 +496,7 @@ class AsyncTranscribeResource(AsyncAPIResource):
 
           timeout: Override the client-level default timeout for this request, in seconds
         """
-        body = deepcopy_minimal({"file": file})
+        body = deepcopy_with_paths({"file": file}, [["file"]])
         files = extract_files(cast(Mapping[str, object], body), paths=[["file"]])
         # It should be noted that the actual Content-Type header that will be
         # sent to the server will contain a `boundary` parameter, e.g.
