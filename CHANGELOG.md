@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.0 (2026-07-18)
+
+Full Changelog: [v2.1.0...v2.2.0](https://github.com/sudoping01/djelia-sdk/compare/v2.1.0...v2.2.0)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([605ec54](https://github.com/sudoping01/djelia-sdk/commit/605ec547db7e22c0b7c6a366575504aa5d97f2a3))
+
 ## 2.1.0 (2026-05-13)
 
 Full Changelog: [v2.0.3...v2.1.0](https://github.com/sudoping01/djelia-sdk/compare/v2.0.3...v2.1.0)
